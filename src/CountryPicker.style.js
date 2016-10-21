@@ -66,9 +66,10 @@ export default StyleSheet.create({
   },
   letter: {
     height: getHeightPercent(3.3),
-    width: getWidthPercent(4),
+    width: getWidthPercent(4) + 20,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 10
   },
   letterText: {
     textAlign: 'center',

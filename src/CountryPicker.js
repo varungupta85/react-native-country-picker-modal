@@ -8,28 +8,24 @@ import React, { Component } from 'react';
 import { View, Image, TouchableOpacity, Modal, Text, ListView, Platform } from 'react-native';
 import _ from 'lodash';
 
-import cca2List from '../data/cca2';
 import { getHeightPercent } from './ratio';
 import CloseButton from './CloseButton';
 import styles from './CountryPicker.style';
 
-let countries = null;
-let Emoji = null;
+import Emoji from 'react-native-emoji';
 
-// Maybe someday android get all flags emoji
-// but for now just ios
-// const isEmojiable = Platform.OS === 'ios' ||
-// (Platform.OS === 'android' && Platform.Version >= 21);
-const isEmojiable = Platform.OS === 'ios';
+const allCountries = require('../data/countries-emoji');
 
-if (isEmojiable) {
-  countries = require('../data/countries-emoji');
-  Emoji = require('react-native-emoji').default;
-} else {
-  countries = require('../data/countries');
+// Filter out the countries that don't have a calling code
+let countries = {}
+Object.keys(allCountries).forEach((countryCode) => {
+  const country = allCountries[countryCode];
+  if(country.callingCode) {
+    countries[countryCode] = country;
+  }
+})
 
-  Emoji = <View />;
-}
+const cca2List = Object.keys(countries)
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
@@ -165,7 +161,7 @@ export default class CountryPicker extends Component {
   renderFlag(cca2) {
     return (
       <View style={styles.itemCountryFlag}>
-        {isEmojiable ? this.renderEmojiFlag(cca2) : this.renderImageFlag(cca2)}
+        {this.renderEmojiFlag(cca2)}
       </View>
     );
   }
