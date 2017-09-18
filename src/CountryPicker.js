@@ -27,6 +27,18 @@ Object.keys(allCountries).forEach((countryCode) => {
 
 const cca2List = Object.keys(countries)
 
+
+export const getAllCountries = () => {
+  let countriesToReturn = {}
+  cca2List.forEach(cca2 => {
+    countriesToReturn[cca2] = {
+      ...countries[cca2],
+      cca2
+    }
+  })
+  return countriesToReturn
+}
+
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 export default class CountryPicker extends Component {
