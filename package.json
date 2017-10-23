@@ -29,8 +29,8 @@
   "dependencies": {
     "babel-preset-react-native-stage-0": "1.0.1",
     "lodash": "4.12.0",
+    "node-emoji": "1.8.1",
     "prop-types": "15.6.0",
-    "react-native-emoji": "1.2.0",
     "world-countries": "1.8.0"
   },
   "devDependencies": {

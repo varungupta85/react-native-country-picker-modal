@@ -12,7 +12,7 @@ import { getHeightPercent } from './ratio';
 import CloseButton from './CloseButton';
 import styles from './CountryPicker.style';
 
-import Emoji from 'react-native-emoji';
+import Emoji from './emoji';
 
 import PropTypes from 'prop-types'
 
