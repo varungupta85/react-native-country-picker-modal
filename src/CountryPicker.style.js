@@ -1,5 +1,5 @@
 import { StyleSheet, PixelRatio } from 'react-native';
-import { getWidthPercent, getHeightPercent } from './ratio';
+import { getWidthPercent, getHeightPercent, getTop, getBottom } from './ratio';
 
 export default StyleSheet.create({
   modalContainer: {
