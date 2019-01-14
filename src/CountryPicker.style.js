@@ -57,8 +57,8 @@ export default StyleSheet.create({
   letters: {
     position: 'absolute',
     height: getHeightPercent(100),
-    top: 0,
-    bottom: 0,
+    top: getTop(),
+    bottom: getBottom(),
     right: 10,
     backgroundColor: 'transparent',
     justifyContent: 'center',

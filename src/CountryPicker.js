@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Image, TouchableOpacity, Modal, Text, ListView, Platform } from 'react-native';
+import { View, Image, TouchableOpacity, Modal, Text, ListView, SafeAreaView, Platform } from 'react-native';
 import _ from 'lodash';
 
 import { getHeightPercent } from './ratio';
@@ -195,7 +195,7 @@ export default class CountryPicker extends Component {
           visible={this.state.modalVisible}
           onRequestClose={() => this.setState({ modalVisible: false })}
         >
-          <View style={styles.modalContainer}>
+          <SafeAreaView style={styles.modalContainer}>
             {
               this.props.closeable &&
                 <CloseButton onPress={() => this.setState({ modalVisible: false })} />
@@ -214,7 +214,7 @@ export default class CountryPicker extends Component {
             <View style={styles.letters}>
               {this.letters.map((letter, index) => this.renderLetters(letter, index))}
             </View>
-          </View>
+          </SafeAreaView>
         </Modal>
       </View>
     );
