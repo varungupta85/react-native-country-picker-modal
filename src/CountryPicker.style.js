@@ -23,15 +23,6 @@ export default StyleSheet.create({
     borderColor: '#eee',
     opacity: 0.8,
   },
-  emojiFlag: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 30,
-    width: 40,
-    height: 40,
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: 'transparent',
-  },
   itemCountry: {
     flexDirection: 'row',
     height: getHeightPercent(7),

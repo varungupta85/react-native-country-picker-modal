@@ -157,9 +157,7 @@ export default class CountryPicker extends Component {
 
   renderEmojiFlag(cca2) {
     return (
-      <Text style={styles.emojiFlag}>
-        <Emoji name={countries[cca2].flag} />
-      </Text>
+      <Emoji name={countries[cca2].flag} />
     );
   }
 
@@ -182,14 +180,12 @@ export default class CountryPicker extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{justifyContent: 'center'}}>
         <TouchableOpacity
           onPress={() => this.setState({ modalVisible: true })}
           activeOpacity={0.7}
         >
-          <View style={styles.touchFlag}>
-            {this.renderFlag(this.props.cca2)}
-          </View>
+        {this.renderEmojiFlag(this.props.cca2)}
         </TouchableOpacity>
         <Modal
           visible={this.state.modalVisible}
